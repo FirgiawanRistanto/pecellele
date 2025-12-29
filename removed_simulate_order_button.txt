@@ -1,0 +1,3 @@
+The "Simulasi Pesanan" button has been removed from the admin navbar.
+
+Please provide your feedback regarding the empty PDF data.

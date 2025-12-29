@@ -1,0 +1,11 @@
+I have updated the `handleOrder` function in `public/js/script.js` to include the CSRF token in the order submission. This should resolve the 302 redirect issue.
+
+Please refresh your **home page** in the browser (Ctrl+R or Cmd+R) and try making an order again:
+
+1.  Add items to your cart.
+2.  Select "Transfer Dana" as the payment method.
+3.  **Upload an image file** for payment proof.
+4.  Fill in other details (address, notes).
+5.  Submit the order.
+
+Let me know if the order goes through successfully now, or if you encounter a different error.

@@ -1,0 +1,8 @@
+1. Instantiate the controller:
+   `$controller = new App\Http\Controllers\Api\SliderController();`
+2. Call the `index` method:
+   `$response = $controller->index();`
+3. Get the JSON content:
+   `json_decode($response->getContent());`
+
+Please execute these commands in your Tinker session and share the output.

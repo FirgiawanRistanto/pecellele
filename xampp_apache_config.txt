@@ -1,0 +1,48 @@
+The error "SyntaxError: Unexpected token 'u', "use App\Mo"... is not valid JSON" is very clear. It means that your web browser is receiving the raw PHP code of the `SliderController.php` file, starting with "use App\Models\Slider;", instead of a JSON response. This happens because your web server (likely Apache, part of XAMPP) is not configured to execute the PHP file as part of the Laravel application. Instead, it's just serving the file content directly.
+
+To fix this, you need to configure your Apache web server to point its document root to the `public` directory of your Laravel project. This ensures that all requests go through Laravel's `public/index.php` file, which is responsible for routing all requests to the correct controller methods.
+
+Here's how you can typically set up a virtual host for your Laravel project in XAMPP:
+
+**Steps to Configure Apache in XAMPP:**
+
+1.  **Open XAMPP Control Panel.**
+2.  **Stop Apache** if it's currently running.
+3.  **Edit `httpd-vhosts.conf`:**
+    *   Click the "Config" button next to Apache in the XAMPP Control Panel.
+    *   Select `httpd-vhosts.conf` from the dropdown menu.
+    *   Add the following block to the end of the file. **Make sure to replace `D:/Kuliah/xampp8/htdocs/Pecel-Lele-Laravel` with the actual full path to your project folder.**
+
+    ```apache
+    <VirtualHost *:80>
+        DocumentRoot "D:/Kuliah/xampp8/htdocs/Pecel-Lele-Laravel/public"
+        ServerName pecel-lele.test # You can choose any domain name, like myapp.test
+        <Directory "D:/Kuliah/xampp8/htdocs/Pecel-Lele-Laravel/public">
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    ```
+
+4.  **Edit `httpd.conf`:**
+    *   Click the "Config" button next to Apache in the XAMPP Control Panel.
+    *   Select `httpd.conf` from the dropdown menu.
+    *   Find the line `#Include conf/extra/httpd-vhosts.conf` and **uncomment it** (remove the `#` symbol at the beginning). This enables the virtual hosts configuration.
+
+5.  **Edit your `hosts` file:**
+    *   Open Notepad (or any text editor) as an **Administrator**.
+    *   Navigate to `C:\Windows\System32\drivers\etc\`.
+    *   Open the `hosts` file.
+    *   Add the following line at the end:
+
+    ```
+    127.0.0.1       pecel-lele.test
+    ```
+    *   Save the `hosts` file.
+
+6.  **Start Apache** from the XAMPP Control Panel.
+
+After these steps, you should be able to access your Laravel application by navigating to `http://pecel-lele.test/` in your browser. This will correctly route all requests through Laravel's `index.php`, and the API calls should then work as expected, returning proper JSON.
+
+Please perform these configuration changes and let me know if the "gagal memuat data slider" error persists.

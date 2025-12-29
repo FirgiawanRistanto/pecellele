@@ -1,0 +1,12 @@
+Okay, the database migration to add `payment_proof_image` column has been successfully applied, and the `OrderController` is configured to handle the image upload.
+
+Please refresh your **home page** in the browser (Ctrl+R or Cmd+R) and try making an order:
+
+1.  Add items to your cart.
+2.  Select "Transfer Dana" as the payment method.
+3.  Verify that the "Unggah Bukti Pembayaran" (Upload Payment Proof) field appears.
+4.  **Upload an image file** as payment proof.
+5.  Fill in other details (address, notes).
+6.  Submit the order.
+
+Let me know if the order goes through successfully and if you still see any errors. We are testing if the entire process (frontend upload, backend saving) works.

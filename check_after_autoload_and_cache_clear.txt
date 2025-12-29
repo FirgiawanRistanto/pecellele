@@ -1,0 +1,3 @@
+I have regenerated Composer's autoloader and cleared all Laravel caches.
+
+Please refresh your admin page in the browser (Ctrl+R or Cmd+R) and check if the "Target class [App\Http\Controllers\Api\SliderController] does not exist" error is resolved and if the slider data is now loading correctly.

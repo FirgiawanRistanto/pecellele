@@ -1,0 +1,5 @@
+Please execute the following command in your Tinker session and share the output:
+
+`App\Models\Slider::all();`
+
+This will show us if there are any slider records in the database.

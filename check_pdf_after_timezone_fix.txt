@@ -1,0 +1,3 @@
+I have updated the application timezone in `config/app.php` to `Asia/Jakarta`.
+
+Please refresh your admin page in the browser (Ctrl+R or Cmd+R) and try generating the PDF report again. This should resolve the date mismatch and allow the sales data to appear correctly in the PDF.

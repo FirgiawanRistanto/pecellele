@@ -1,0 +1,1 @@
+I have asked the user to refresh their admin page in the browser after clearing Laravel caches. I am now awaiting their feedback.

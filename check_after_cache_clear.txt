@@ -1,0 +1,3 @@
+I have cleared all Laravel caches.
+
+Please refresh your admin page in the browser (Ctrl+R or Cmd+R) and check if the "gagal memuat data slider" error persists, or if the slider data is now loading correctly.
